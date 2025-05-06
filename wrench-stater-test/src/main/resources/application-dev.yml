@@ -1,0 +1,19 @@
+server:
+  port: 9191
+
+# 扳手通用组件配置
+dcc:
+  wrench:
+    config:
+      system: test-system
+      register:
+        # redis host
+        host: localhost
+        # redis port
+        port: 6379
+
+# 日志
+logging:
+  level:
+    root: info
+  config: classpath:logback-spring.xml
