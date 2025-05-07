@@ -11,6 +11,7 @@
     <modules>
         <module>wrench-starter-dynamic-config-center</module>
         <module>wrench-stater-test</module>
+        <module>wrench-starter-design-framwork</module>
     </modules>
 
     <properties>
@@ -21,6 +22,7 @@
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <maven-checksum-plugin.version>1.10</maven-checksum-plugin.version>
+        <wrench.version>1.0-SNAPSHOT</wrench.version>
     </properties>
 
     <parent>
@@ -67,6 +69,16 @@
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson-spring-boot-starter</artifactId>
                 <version>3.26.0</version>
+            </dependency>
+            <dependency>
+                <groupId>xyz.zhp.wrench</groupId>
+                <artifactId>wrench-starter-dynamic-config-center</artifactId>
+                <version>${wrench.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>xyz.zhp.wrench</groupId>
+                <artifactId>wrench-starter-design-framwork</artifactId>
+                <version>${wrench.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
