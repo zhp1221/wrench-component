@@ -28,7 +28,7 @@ public abstract class AbstractStrategyRouter<T, D, R> implements StrategyHandler
      */
     public R router(T requestParameter, D dynamicContext) throws Exception{
         StrategyHandler<T, D, R> strategyHandler = get(requestParameter, dynamicContext);
-        if (strategyHandler != null) return apply(requestParameter, dynamicContext);
+        if (strategyHandler != null) return strategyHandler.apply(requestParameter, dynamicContext);
         return defaultStrategyHandler.apply(requestParameter, dynamicContext);
     }
 
