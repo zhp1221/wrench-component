@@ -1,10 +1,9 @@
 package xyz.zhp.wrench.test.design.tree.multithread.node;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import xyz.zhp.wrench.design.framwork.tree.StrategyHandler;
 import xyz.zhp.wrench.test.design.tree.model.DynamicContext;
-import xyz.zhp.wrench.test.design.tree.multithread.AbstractXxxSupport;
+import xyz.zhp.wrench.test.design.tree.multithread.MutilAbstractXxxSupport;
 
 /**
  * @author zhp
@@ -12,7 +11,7 @@ import xyz.zhp.wrench.test.design.tree.multithread.AbstractXxxSupport;
  * @since 2025-05-07 17:33
  */
 @Component
-public class MultiRootNode extends AbstractXxxSupport {
+public class MultiRootNode extends MutilAbstractXxxSupport {
 
     private final MutilSwitchNode mutilSwitchNode;
 

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import xyz.zhp.wrench.design.framwork.tree.StrategyHandler;
 import xyz.zhp.wrench.test.design.tree.model.DynamicContext;
-import xyz.zhp.wrench.test.design.tree.multithread.AbstractXxxSupport;
+import xyz.zhp.wrench.test.design.tree.multithread.MutilAbstractXxxSupport;
 import xyz.zhp.wrench.test.design.tree.multithread.node.last.MultiMemberLevel1Node;
 import xyz.zhp.wrench.test.design.tree.multithread.node.last.MultiMemberLevel2Node;
 
@@ -19,16 +19,16 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @since 2025-05-07 17:46
  */
 @Component
-public class MutilAccountNode extends AbstractXxxSupport {
+public class MutilAccountNode extends MutilAbstractXxxSupport {
 
     @Resource
     private ThreadPoolExecutor threadPoolExecutor;
 
     @Autowired
-    private MultiMemberLevel1Node memberLevel1Node;
+    private MultiMemberLevel1Node multiMemberLevel1Node;
 
     @Autowired
-    private MultiMemberLevel2Node memberLevel2Node;
+    private MultiMemberLevel2Node multiMemberLevel2Node;
 
     @Override
     protected void multiThread(String requestParameter, DynamicContext dynamicContext) throws Exception {
@@ -71,17 +71,17 @@ public class MutilAccountNode extends AbstractXxxSupport {
         int level = dynamicContext.getLevel();
 
         if ("账户冻结".equals(accountType01)) {
-            return memberLevel1Node;
+            return multiMemberLevel1Node;
         }
 
         if ("拦截".equals(accountType02)) {
-            return memberLevel1Node;
+            return multiMemberLevel1Node;
         }
 
         if (level == 1) {
-            return memberLevel1Node;
+            return multiMemberLevel1Node;
         }
 
-        return memberLevel2Node;
+        return multiMemberLevel2Node;
     }
 }
