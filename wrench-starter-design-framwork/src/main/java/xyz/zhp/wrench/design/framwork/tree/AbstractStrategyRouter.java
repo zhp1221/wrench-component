@@ -1,8 +1,8 @@
 package xyz.zhp.wrench.design.framwork.tree;
 
 
-import lombok.Getter;
-import lombok.Setter;
+//import lombok.Getter;
+//import lombok.Setter;
 
 /**
  * @author zhp
@@ -12,8 +12,8 @@ import lombok.Setter;
 @SuppressWarnings("all")
 public abstract class AbstractStrategyRouter<T, D, R> implements StrategyHandler<T, D, R>, StrategyMapper<T, D, R>{
 
-    @Getter
-    @Setter
+//    @Getter
+//    @Setter
     protected StrategyHandler<T, D, R> defaultStrategyHandler = StrategyHandler.DEFAULT;
 
     /**
@@ -32,4 +32,12 @@ public abstract class AbstractStrategyRouter<T, D, R> implements StrategyHandler
         return defaultStrategyHandler.apply(requestParameter, dynamicContext);
     }
 
+
+    public StrategyHandler<T, D, R> getDefaultStrategyHandler() {
+        return defaultStrategyHandler;
+    }
+
+    public void setDefaultStrategyHandler(StrategyHandler<T, D, R> defaultStrategyHandler) {
+        this.defaultStrategyHandler = defaultStrategyHandler;
+    }
 }
