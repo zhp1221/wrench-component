@@ -147,8 +147,8 @@
                         <configuration>
                             <additionalparam>-Xdoclint:none</additionalparam>
                             <!--  /Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home/bin/javadoc -->
-                            <javadocExecutable>C:\Program Files\Java\jdk1.8.0_151\bin\javadoc.exe</javadocExecutable>
-<!--                            <javadocExecutable>${java.home}${file.separator}..${file.separator}bin${file.separator}javadoc</javadocExecutable>-->
+<!--                            <javadocExecutable>C:\Program Files\Java\jdk1.8.0_151\bin\javadoc.exe</javadocExecutable>-->
+                            <javadocExecutable>${java.home}${file.separator}..${file.separator}bin${file.separator}javadoc</javadocExecutable>
                         </configuration>
                     </execution>
                 </executions>
