@@ -10,7 +10,7 @@
 <!--    </parent>-->
 
     <groupId>io.github.zhp1221</groupId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 
     <artifactId>wrench-starter-design-framwork</artifactId>
 
@@ -241,6 +241,27 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.4.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <artifactSet>
+<!--                        不会打入lombok的authors， licenses到jar包-->
+                        <includes>
+                            <include>org.projectlombok:</include>
+                        </includes>
+                    </artifactSet>
+                </configuration>
             </plugin>
         </plugins>
     </build>
