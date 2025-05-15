@@ -61,6 +61,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.38</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -242,27 +243,27 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.4.1</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <artifactSet>
-<!--                        不会打入lombok的authors， licenses到jar包-->
-                        <includes>
-                            <include>org.projectlombok:</include>
-                        </includes>
-                    </artifactSet>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-shade-plugin</artifactId>-->
+<!--                <version>3.4.1</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>shade</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <artifactSet>-->
+<!--&lt;!&ndash;                        不会打入lombok的authors， licenses到jar包&ndash;&gt;-->
+<!--                        <includes>-->
+<!--                            <include>org.projectlombok:</include>-->
+<!--                        </includes>-->
+<!--                    </artifactSet>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
