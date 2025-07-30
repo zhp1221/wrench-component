@@ -1,4 +1,4 @@
-package xyz.zhp.wrench.design.framwork.chain;
+package io.github.zhp1221.design.framework.chain;
 
 /**
  * 责任链抽象类
