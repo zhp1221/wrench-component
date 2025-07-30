@@ -3,11 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>io.github.zhp1221</groupId>
-        <artifactId>wrench-16702-zhp</artifactId>
-        <version>1.0.2</version>
-    </parent>
+<!--    <parent>-->
+<!--        <groupId>io.github.zhp1221</groupId>-->
+<!--        <artifactId>wrench-16702-zhp</artifactId>-->
+<!--        <version>1.0.2</version>-->
+<!--    </parent>-->
+
+    <groupId>io.github.zhp1221</groupId>
+    <version>1.0.4</version>
 
     <artifactId>wrench-starter-design-framwork</artifactId>
 
@@ -25,7 +28,7 @@
 
     <developers>
         <developer>
-            <id>ossrh</id>
+            <id>test</id>
             <name>zhp</name>
             <email>zhanghp1221@126.com</email>
             <url>https://github.com/zhp1221</url>
@@ -57,10 +60,8 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
+            <version>1.18.38</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -70,7 +71,7 @@
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
                 <includes>
-                    <include>**/**</include>
+                    <include>**/** </include>
                 </includes>
             </resource>
         </resources>
@@ -79,7 +80,7 @@
                 <directory>src/test/resources</directory>
                 <filtering>true</filtering>
                 <includes>
-                    <include>**/**</include>
+                    <include>**/** </include>
                 </includes>
             </testResource>
         </testResources>
@@ -106,7 +107,7 @@
                 <version>0.4.0</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <publishingServerId>ossrh</publishingServerId>
+                    <publishingServerId>test</publishingServerId>
                     <tokenAuth>true</tokenAuth>
                 </configuration>
             </plugin>
@@ -147,7 +148,6 @@
                         <configuration>
                             <additionalparam>-Xdoclint:none</additionalparam>
                             <!--  /Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home/bin/javadoc -->
-<!--                            <javadocExecutable>C:\Program Files\Java\jdk1.8.0_151\bin\javadoc.exe</javadocExecutable>-->
                             <javadocExecutable>${java.home}${file.separator}..${file.separator}bin${file.separator}javadoc</javadocExecutable>
                         </configuration>
                     </execution>
@@ -189,7 +189,7 @@
                 <version>1.5</version>
                 <configuration>
                     <!--指定用于签名的 GPG 密钥名称。-->
-                    <keyname>ossrh</keyname>
+                    <keyname>test</keyname>
                 </configuration>
                 <executions>
                     <execution>

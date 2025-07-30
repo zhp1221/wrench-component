@@ -56,12 +56,12 @@
 
         <!-- 动态配置中心 -->
         <dependency>
-            <groupId>xyz.zhp.wrench</groupId>
+            <groupId>io.github.zhp1221</groupId>
             <artifactId>wrench-starter-dynamic-config-center</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>xyz.zhp.wrench</groupId>
+            <groupId>io.github.zhp1221</groupId>
             <artifactId>wrench-starter-design-framwork</artifactId>
         </dependency>
 
