@@ -1,4 +1,4 @@
-package io.github.zhp1221.design.framework.tree;
+package io.github.zhp1221.design.framework.tree.general;
 
 /**
  * @param <T> 请求参数

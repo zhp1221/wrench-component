@@ -5,10 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.github.zhp1221</groupId>
-        <artifactId>wrench-16702-zhp</artifactId>
+        <artifactId>wrench-componet</artifactId>
         <version>1.0.2</version>
     </parent>
 
+    <version>1.0.2</version>
     <artifactId>wrench-stater-test</artifactId>
 
     <properties>
