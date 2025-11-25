@@ -1,9 +1,8 @@
 package io.github.zhp1221.design.framework.utils;
 
-import cn.hutool.json.JSON;
 import cn.hutool.json.JSONUtil;
-import cn.hutool.log.StaticLog;
 import lombok.experimental.UtilityClass;
+import lombok.extern.slf4j.Slf4j;
 import ognl.Ognl;
 import ognl.OgnlContext;
 import ognl.OgnlException;
@@ -14,6 +13,7 @@ import ognl.OgnlException;
  * @author zhp
  * @since 2025-11-25 16:30
  */
+@Slf4j
 @UtilityClass
 public class OgnlUtils {
 
@@ -29,11 +29,9 @@ public class OgnlUtils {
     }
 
     public void traverse(OgnlContext ognlContext){
-        StaticLog.info("=========================ognl context traverse========================");
         ognlContext.forEach((k, v) -> {
-            StaticLog.info("key:{}, value:{}", k, v == null ? "" : JSONUtil.toJsonPrettyStr(v));
+            log.info("key:{}, value:{}", k, v == null ? "" : JSONUtil.toJsonPrettyStr(v));
         });
-        StaticLog.info("=========================ognl context traverse========================");
     }
 
     public Boolean match(OgnlContext ognlContext, String ognlExpression){
@@ -44,8 +42,7 @@ public class OgnlUtils {
             }
             return (Boolean)value;
         } catch (OgnlException e) {
-            StaticLog.error("[ognl parse error] ognlExpression:{}, e:{}", ognlExpression,e.getMessage(), e);
-            throw new RuntimeException("[ognl parse error]" + e.getMessage());
+            throw new RuntimeException("[ognl parse error]" + e.getMessage(), e);
         }
 
     }

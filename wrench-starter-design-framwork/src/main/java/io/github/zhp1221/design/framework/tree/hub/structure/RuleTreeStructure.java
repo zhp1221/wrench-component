@@ -5,6 +5,8 @@ import io.github.zhp1221.design.framework.tree.hub.model.RuleTreeEntryPointVO;
 import io.github.zhp1221.design.framework.tree.hub.model.RuleTreeLineVO;
 import io.github.zhp1221.design.framework.tree.hub.model.RuleTreeNodeVO;
 import io.github.zhp1221.design.framework.tree.hub.template.RuleTreeHubTemplate;
+import lombok.experimental.UtilityClass;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.Map;
@@ -15,6 +17,8 @@ import java.util.Map;
  * @author zhp
  * @since 2025-11-25 16:43
  */
+@Slf4j
+@UtilityClass
 public class RuleTreeStructure {
 
     /**
@@ -46,7 +50,7 @@ public class RuleTreeStructure {
      */
     private void recursion(String node, int recursionDepth, Map<String, RuleTreeNodeVO> treeNodeMap) {
         RuleTreeNodeVO ruleTreeNodeVO = treeNodeMap.get(node);
-        System.out.println(printContext(recursionDepth, String.format("[%s]", node)));
+        log.info(printContext(recursionDepth, String.format("[%s]", node)));
 
         List<RuleTreeLineVO> nextStrategy;
 
@@ -62,7 +66,7 @@ public class RuleTreeStructure {
     /**
      * 空格制空，打印信息
      *
-     * @param count 空格分割
+     * @param count   空格分割
      * @param context 信息
      * @return 结果
      */

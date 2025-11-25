@@ -4,7 +4,6 @@ import cn.hutool.core.collection.IterUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
-import cn.hutool.log.StaticLog;
 import io.github.zhp1221.design.framework.tree.hub.StrategyHubHandler;
 import io.github.zhp1221.design.framework.tree.hub.model.RuleTreeEntryPointVO;
 import io.github.zhp1221.design.framework.tree.hub.model.RuleTreeLineVO;
@@ -23,6 +22,7 @@ import java.util.Map;
  * @author zhp
  * @since 2025-11-25 16:49
  */
+@Slf4j
 @SuppressWarnings("all")
 public class ExpressionRuleTreeEngine {
     public final OgnlContext ognlContext;
@@ -44,13 +44,12 @@ public class ExpressionRuleTreeEngine {
             // 开始处理
             while (nextNode != null) {
 
-                StaticLog.info("=================={}===================", nextNode);
+                log.info("=================={}===================", nextNode);
 
                 // 业务类获取
                 StrategyHubHandler iTestRuleTree = logicTreeGroup.get(ruleTree.getServiceBean());
 
                 if (iTestRuleTree == null) {
-                    StaticLog.info("策略为空，结束规则树");
                     break;
                 }
                 // 业务处理
@@ -60,10 +59,7 @@ public class ExpressionRuleTreeEngine {
                 ruleTree = treeNodeMap.get(nextNode = logic(ruleTree, iTestRuleTree, dynamicContext));
             }
         } catch (Exception e) {
-
-            StaticLog.error("[执行失败] e:{}", e.getMessage(), e);
-
-            throw new IllegalArgumentException(e.getMessage());
+            throw new IllegalArgumentException(e.getMessage(), e);
 
         } finally {
 
@@ -94,7 +90,6 @@ public class ExpressionRuleTreeEngine {
             }
         }
 
-        StaticLog.error("业务匹配规则失败，请检查, nextStrategy:{}", log(nextStrategy));
         throw new RuntimeException("规则树引擎，nextNode 计算失败，未找到可执行节点！");
     }
 
