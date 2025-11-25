@@ -11,6 +11,7 @@
     <modules>
         <module>wrench-starter-dynamic-config-center</module>
         <module>wrench-stater-test</module>
+        <module>wrench-starter-design-framwork</module>
         <module>wrench-bom</module>
     </modules>
 

@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: wrench-test-app
+  profiles:
+    # xml中的build，看笔记
+    active: @env@

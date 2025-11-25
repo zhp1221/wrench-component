@@ -64,8 +64,26 @@
         <dependency>
             <groupId>io.github.zhp1221</groupId>
             <artifactId>wrench-starter-design-framwork</artifactId>
+            <version>1.0.5-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+            <groupId>ognl</groupId>
+            <artifactId>ognl</artifactId>
+            <version>3.4.8</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
+            <version>5.8.5</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-json</artifactId>
+            <version>5.8.5</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>
