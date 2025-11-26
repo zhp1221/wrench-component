@@ -21,6 +21,7 @@ public class AccountErrorInfoImpl extends AbstractSeckillRuleSupport {
 
     @Override
     public void handle(SeckillReq secKillReq, SeckillResp resp, Void dynamicContext) {
+        log.warn("账号存在刷单行为，user_id:{}", secKillReq.getUserInfo().getUserId());
         resp.setMsg(ACCOUNT_ERROR);
     }
 }

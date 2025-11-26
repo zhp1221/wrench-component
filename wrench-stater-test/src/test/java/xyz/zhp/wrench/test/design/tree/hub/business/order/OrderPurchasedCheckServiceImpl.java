@@ -1,4 +1,4 @@
-package xyz.zhp.wrench.test.design.tree.hub.business.count;
+package xyz.zhp.wrench.test.design.tree.hub.business.order;
 
 import lombok.extern.slf4j.Slf4j;
 import ognl.OgnlContext;
@@ -10,28 +10,26 @@ import xyz.zhp.wrench.test.design.tree.hub.model.SeckillResp;
 
 import java.util.Random;
 
-import static xyz.zhp.wrench.test.design.tree.hub.model.SeckillConstant.PURCHASE_COUNT_LIMIT;
-
 /**
  *
  *
  * @author zhp
- * @since 2025-11-25 18:23
+ * @since 2025-11-26 10:17
  */
 @Slf4j
-@Service(SeckillBeanConstant.userPurchased)
-public class UserPurchasedServiceImpl extends AbstractSeckillRuleSupport {
+@Service(SeckillBeanConstant.orderPurchasedCheck)
+public class OrderPurchasedCheckServiceImpl  extends AbstractSeckillRuleSupport {
 
     @Override
     public void handle(SeckillReq secKillReq, SeckillResp s, Void dynamicContext) {
-        log.info("redis 读取用户已购数量~~~, 限购数量：{}", PURCHASE_COUNT_LIMIT);
+        log.info("检测该用户，是否有已下单");
     }
 
     @Override
     public Boolean match(OgnlContext ognlContext, String ognl, Void unused) {
-        int purchase_count = new Random().nextInt(PURCHASE_COUNT_LIMIT + 1);
-        log.info("用户已购数量:{}", purchase_count);
-        ognlContext.put("purchase_count", purchase_count);
+        boolean flag = new Random().nextBoolean();
+        log.info("已下单标志:{}", flag);
+        ognlContext.put("order_purchased", flag);
         return super.match(ognlContext, ognl, unused);
     }
 }
