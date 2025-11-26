@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.zhp1221</groupId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.5</version>
 
     <artifactId>wrench-starter-design-framwork</artifactId>
 
