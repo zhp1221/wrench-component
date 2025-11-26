@@ -19,19 +19,21 @@ import static xyz.zhp.wrench.test.design.tree.hub.model.SeckillConstant.PURCHASE
  * @since 2025-11-25 18:23
  */
 @Slf4j
-@Service(SeckillBeanConstant.userPurchased)
-public class UserPurchasedServiceImpl extends AbstractSeckillRuleSupport {
+@Service(SeckillBeanConstant.cityUserPurchased)
+public class CityUserPurchasedServiceImpl extends AbstractSeckillRuleSupport {
 
     @Override
     public void handle(SeckillReq secKillReq, SeckillResp s, Void dynamicContext) {
-        log.info("redis 读取用户已购数量~~~, 限购数量：{}", PURCHASE_COUNT_LIMIT);
+        log.info("检测是否是所在城市中");
     }
 
     @Override
     public Boolean match(OgnlContext ognlContext, String ognl, Void unused) {
         int purchase_count = new Random().nextInt(PURCHASE_COUNT_LIMIT + 1);
-        log.info("用户已购数量:{}", purchase_count);
+        boolean cityFlag = new Random().nextBoolean();
+        log.info("城市是否限购：{} 读取用户已购数量~~~, 限购数量：{}, 用户已购数量:{}", cityFlag, PURCHASE_COUNT_LIMIT, purchase_count);
         ognlContext.put("purchase_count", purchase_count);
+        ognlContext.put("city_limit", cityFlag);
         return super.match(ognlContext, ognl, unused);
     }
 }
