@@ -14,7 +14,7 @@ public class SingletonTag {
         if (singletonTag == null) {
             synchronized (SingletonTag.class){
                 if (singletonTag == null) {
-                    return new SingletonTag();
+                    return singletonTag = new SingletonTag();
                 }
             }
         }
