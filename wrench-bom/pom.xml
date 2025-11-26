@@ -6,7 +6,7 @@
 
     <groupId>io.github.zhp1221</groupId>
     <artifactId>wrench-bom</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
 
 
     <name>wrench-bom</name>
@@ -23,7 +23,7 @@
 
     <developers>
         <developer>
-            <id>test</id>
+            <id>design</id>
             <name>zhp</name>
             <email>zhanghp1221@126.com</email>
             <url>https://github.com/zhp1221</url>
@@ -52,7 +52,7 @@
             <dependency>
                 <groupId>io.github.zhp1221</groupId>
                 <artifactId>wrench-starter-design-framwork</artifactId>
-                <version>1.0.4</version>
+                <version>1.0.5</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -99,7 +99,7 @@
                 <version>0.4.0</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <publishingServerId>test</publishingServerId>
+                    <publishingServerId>design</publishingServerId>
                     <tokenAuth>true</tokenAuth>
                 </configuration>
             </plugin>
@@ -181,7 +181,7 @@
                 <version>1.5</version>
                 <configuration>
                     <!--指定用于签名的 GPG 密钥名称。-->
-                    <keyname>test</keyname>
+                    <keyname>design</keyname>
                 </configuration>
                 <executions>
                     <execution>
